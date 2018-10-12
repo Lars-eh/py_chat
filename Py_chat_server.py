@@ -28,9 +28,13 @@ def handle_client(client):
     msg = "Server:" + "Welcome, " + name + "!"
     broadcast(msg)
     while True:
-        msg = client.recv(buff_size).decode("utf8")
-        msg = name + ":" + msg
-        broadcast(msg)
+        try:
+            msg = client.recv(buff_size).decode("utf8")
+            msg = name + ":" + msg
+            broadcast(msg)
+        except :
+            print('Client %s closed connection' %clients[client])
+            break;
 
 def broadcast(msg):
     for sock in clients:
