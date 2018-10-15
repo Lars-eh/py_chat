@@ -1,7 +1,7 @@
 import socket
 import threading
 
-HOST = "localhost"
+HOST = ''
 PORT = 8888
 ADDR = (HOST, PORT)
 buff_size = 1024

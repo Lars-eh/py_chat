@@ -26,8 +26,8 @@ def send(event=None):
 
 
 receiving = threading.Thread(target=receive)
-receiving.start()
 sending = threading.Thread(target=send)
+receiving.start()
 sending.start()
 receiving.join()
 sending.join()
